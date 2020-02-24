@@ -1,0 +1,118 @@
+.App {
+  text-align: center;
+}
+
+body {
+  background: url(https://miro.medium.com/max/1200/1*ueM_xXLpnLBYgWh5tqEqDg.jpeg)
+    no-repeat fixed;
+
+  background-size: cover;
+
+  width: 100%;
+  padding-top: 4em;
+}
+/* https://miro.medium.com/max/3584/1*mU4sZLoNzWCJ4tdqjcdChg.jpeg */
+.nav-container {
+  width: 100%;
+  padding-top: 0.5em;
+  display: flex;
+  height: 2em;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  background: #110000;
+  /* padding: 0 12px 0 0; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: "NFL Dolphins";
+  box-shadow: 10px 5px 5px gold;
+  color: gold;
+  font-size: 5em;
+}
+.home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+a {
+  text-decoration: none;
+  color: gold;
+}
+.nav-marv-logo {
+  width: 50%;
+  height: 2em;
+  margin-left: 2.5em;
+  box-shadow: 5px 5px 5px red;
+}
+
+.nav-dc-logo {
+  width: 30%;
+  height: 2em;
+  margin-left: 5.5em;
+  box-shadow: 5px 5px 5px royalblue;
+}
+.home-item {
+  text-align: center;
+  font-family: "Permanent Marker", cursive;
+  padding-top: 3em;
+  font-size: 4em;
+  margin-top: 0.5em;
+  color: whitesmoke;
+  text-shadow: -1px -1px 0 #000, 2px -1px 0 #000, -1px 2px 0 #000,
+    5px 5px 0 #000;
+}
+.home-cta {
+  background-image: linear-gradient(
+    90deg,
+    rgb(15, 7, 116) 51%,
+    rgb(173, 4, 4) 50%
+  );
+  padding: 1em;
+  width: 15em;
+  margin: 1em;
+  margin-top: 11em;
+  margin-left: 37.36em;
+  color: black;
+  font-size: 1em;
+  border-radius: 0.25em;
+  font-weight: 800;
+  text-shadow: -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke,
+    -1px 1px 0 whitesmoke, 1px 1px whitesmoke;
+  border: none;
+  font-family: "Permanent Marker", cursive;
+  box-shadow: 2px 2px 2px black;
+}
+.home-cta:hover {
+  outline: 2px solid gold;
+  box-shadow: 10px 10px 10px black;
+}
+.char-header {
+  font-family: "Kalam", cursive;
+  margin: 2.5em;
+  color: whitesmoke;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+button {
+  border-radius: 0.5em;
+  box-shadow: 1px 1px 1px black;
+}
+button:hover,
+.add-submit:hover {
+  background-color: chocolate;
+}
+button:focus {
+  outline: none;
+}
+.char-list {
+  float: left;
+  margin: 1em;
+  margin-top: -3em;
+}
+
+.btn-char {
+  margin: 0em 20em;
+}
