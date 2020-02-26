@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 body {
   background: url(https://miro.medium.com/max/1200/1*ueM_xXLpnLBYgWh5tqEqDg.jpeg)
     no-repeat fixed;
@@ -90,7 +86,7 @@ a {
   box-shadow: 10px 10px 10px black;
 }
 .char-header {
-  font-family: "Kalam", cursive;
+  font-family: "Permanent Marker", cursive;
   margin: 2.5em;
   color: whitesmoke;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
@@ -108,11 +104,22 @@ button:focus {
   outline: none;
 }
 .char-list {
-  float: left;
-  margin: 1em;
-  margin-top: -3em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .btn-char {
-  margin: 0em 20em;
+  margin: 20em;
+}
+
+img {
+  width: 25em;
+}
+.char-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }

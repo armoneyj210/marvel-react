@@ -1,50 +1,70 @@
-/* Step 1 import express
- *
- */
-const express = require('express')
+const express = require("express");
 
-/* Step 2
- *
- * Import the api files from the models
- *
- * TODO: change the file path to the models file you'll need to use.
- * TODO: rename this from `templateApi` to something more sensible (e.g:
- * `shopsAPI`)
- *
- * NOTE: You may need to import more than one API to create the 
- * controller you need.
- * 
- */
-const templateApi = require('../models/template.js')
+const comicApi = require("../models/comic.js");
 
-/* Step 3 
- * 
- * Create a new router.
- *
- * the router will "contain" all the request handlers that you define in this file.
- * TODO: rename this from templateRouter to something that makes sense. (e.g:
- * `shopRouter`)
- */
-const templateRouter = express.Router()
+const comicRouter = express.Router();
 
-/* Step 4
- * 
- * TODO: Put all request handlers here
- */
+comicRouter.get("/", (req, res) => {
+  comicApi
+    .getComics()
+    .then(allComics => {
+      res.json(allComics);
+    })
+    .catch(error => {
+      console.log("Failed to retrieve all Comics");
+      console.log(error);
+      res.send(error);
+    });
+});
+comicRouter.get("/:id", (req, res) => {
+  comicApi
+    .getComicById(req.params.id)
+    .then(singleComic => {
+      res.json(singleComic);
+    })
+    .catch(error => {
+      console.log("Failed to retrieve comic by Id");
+      console.log(error);
+      res.send(error);
+    });
+});
+comicRouter.post("/", (req, res) => {
+  comicApi
+    .createComic(req.body)
+    .then(comicCreated => {
+      res.json(comicCreated);
+    })
+    .catch(error => {
+      console.log("Failed to create Comic");
+      console.log(error);
+      res.send(error);
+    });
+});
+comicRouter.delete("/:id", (req, res) => {
+  comicApi
+    .deleteComic(req.params.id)
+    .then(() => {
+      res.send("Comic was deleted");
+    })
+    .catch(error => {
+      console.log("Failed to delete comic");
+      console.log(error);
+      res.send(error);
+    });
+});
+comicRouter.put("/:id", (req, res) => {
+  comicApi
+    .updateComic(req.params.id, req.body)
+    .then(updatedComic => {
+      res.json(updatedComic);
+    })
+    .catch(error => {
+      console.log("Failed to update comic");
+      console.log(error);
+      res.send(error);
+    });
+});
 
-/* Step 5
- *
- * TODO: delete this handler; it's just a sample
- */ 
-templateRouter.get('/', (req, res) => {
-  res.json(templateApi.getHelloWorldString())
-})
-
-/* Step 6
- *
- * Export the router from the file.
- *
- */
 module.exports = {
-  templateRouter
-}
+  comicRouter
+};

@@ -34,7 +34,7 @@ export default class Character extends Component {
   };
   handleSubmit = evt => {
     evt.preventDefault();
-    axios.post("/api/char", this.state.newChar).then(() => {
+    axios.post("/api/comic", this.state.newChar).then(() => {
       this.setState({
         charForm: false,
         newChar: {
@@ -54,8 +54,12 @@ export default class Character extends Component {
         <div className="char-header">
           <div className="char-item">
             <div className="char-list">
-              <h3>{char.name}</h3>
-              <img src={this.state.char.pic} alt={this.state.char.name} />
+              <div>
+                <h3>{char.name}</h3>
+              </div>
+              <div>
+                <img src={char.pic} alt={char.name} />
+              </div>
             </div>
           </div>
         </div>
@@ -96,8 +100,8 @@ export default class Character extends Component {
               <label htmlFor="char-image">Image:</label>
               <input
                 type="text"
-                name="image"
-                value={this.state.newChar.image}
+                name="pic"
+                value={this.state.newChar.pic}
                 onChange={this.handleNewFormChange}
               />
             </div>

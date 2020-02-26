@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/Navbar";
 import Home from "./components/Home";
+import SingleChar from "./components/SingleChar";
 import Character from "./components/Character";
 import Universe from "./components/Universe";
 import Creator from "./components/Creator";
@@ -16,6 +17,7 @@ function App() {
         </div>
         <Switch>
           <Route exact path="/comic" component={Character} />
+          <Route exact path="/comic/:comicId" component={SingleChar} />
           <Route exact path="/creator" component={Creator} />
           <Route exact path="/universe" component={Universe} />
 

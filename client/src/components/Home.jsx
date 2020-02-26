@@ -1,49 +1,24 @@
-/* Step 1 import React, { Component } and axios
- *
- */
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from "react";
 
-/* Step 2
- * Rename this class to reflect the component being created
- *
- */
-export default class HelloWorld extends Component {
+export default class Home extends Component {
+  render() {
+    return (
+      <div>
+        <div className="home-container">
+          <div>
+            <h1 className="home-item">
+              Learn about your favorite Marvel and DC characters
+            </h1>
+          </div>
 
-    /* Step 3
-    * Create a state for the component to store view data
-    *
-    */
-    state = {
-        message: ''
-    }
-
-    /* Step 4
-    * Use componentDidMount to retrieve any data to display
-    *   Here you can make calls to your local express server
-    *   or to an external API
-    *   setState can be run here as well
-    *   -REMINDER remember `setState` it is an async function
-    */
-    componentDidMount() {
-        axios.get('/api/helloworld')
-            .then((res) => {
-                this.setState({message: res.data})
-            })
-    }
-
-    /* Step 5
-    *  The render function manages what is shown in the browser
-    *  TODO: delete the jsx returned
-    *   and replace it with your own custom jsx template
-    *
-    */
-    render() {
-        return (
-            <div>
-                {/* Accessing the value of message from the state object */}
-                <h1>{this.state.message}</h1>
-            </div>
-        )
-    }
+          <div>
+            <a href="/comic">
+              <button className="home-cta">Get Started</button>
+            </a>
+          </div>
+        </div>
+        <div className="footer"></div>
+      </div>
+    );
+  }
 }
